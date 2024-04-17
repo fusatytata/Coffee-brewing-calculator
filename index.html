@@ -1,0 +1,174 @@
+<!-- TODO: Spojit to s githubem!! -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <title>Coffee Brewing Calculator</titąle>
+    </head>
+    <body style="background-color: #2d94b2">
+        <main>
+            <h1>Coffee brewing calculator</h1>
+            <div class="row">
+                <section class="col-md-3 mb-4">
+                    <article class="beans">
+                        <label for="beans">Coffee Beans</label>
+
+                        <input
+                            type="number"
+                            value=""
+                            step="any"
+                            min="1"
+                            max="80"
+                            required
+                            id="beans"
+                            class="form-control"
+                            placeholder="1-80"
+                        />
+                        <span
+                            class="unit input-group-append input-group-text"
+                            style="background-color: #e9df00; border: 1px solid #000500"
+                            >g</span
+                        >
+                    </article>
+                </section>
+
+                <section class="col-md-3 mb-4">
+                    <article class="water">
+                        <label for="water">Water</label>
+                        <input type="number" readonly step="any" id="water" class="form-control" />
+                        <span
+                            class="unit input-group-append input-group-text"
+                            style="background-color: #e9df00; border: 1px solid #000500"
+                            >ml</span
+                        >
+                    </article>
+                </section>
+
+                <section class="col-md-3 mb-4">
+                    <article class="ratio">
+                        <label for="ratio">Ratio</label>
+                        <input
+                            type="number"
+                            value=""
+                            step="any"
+                            min="1"
+                            max="40"
+                            required
+                            id="ratio"
+                            class="form-control"
+                            placeholder="1-40"
+                        />
+                        <span
+                            class="unit input-group-append input-group-text"
+                            style="background-color: #e9df00; border: 1px solid #000500"
+                            >:1</span
+                        >
+                    </article>
+                </section>
+
+                <section class="col">
+                    <article class="yield">
+                        <label for="yield">Coffee yield</label>
+                        <input type="number" readonly step="any" id="yield" class="form-control" />
+                        <span
+                            class="unit input-group-append input-group-text"
+                            style="background-color: #e9df00; border: 1px solid #000500"
+                            >ml</span
+                        >
+                    </article>
+                </section>
+            </div>
+
+            <div class="row">
+                <section class="col">
+                    <article class="timer">
+                        <label for="timer">Timer</label>
+                        <input
+                            type="number"
+                            value=""
+                            step="any"
+                            min="1"
+                            max="40"
+                            required
+                            id="timer"
+                            class="form-control"
+                        />
+                        <span
+                            class="unit input-group-append input-group-text"
+                            style="background-color: #e9df00; border: 1px solid #000500"
+                            >min</span
+                        >
+                    </article>
+                </section>
+
+                <section class="col-md-4 mb-4">
+                    <article class="remain">
+                        <label>Countdown</label>
+                        <label for="remain"></label>
+                        <input type="text" readonly="" id="remain" class="form-control" />
+
+                        <div class="control-buttons">
+                            <button
+                                type="button"
+                                style="background-color: #03fcba; border-radius: 10px"
+                                id="startButton"
+                                class="greenButton"
+                            >
+                                Start
+                            </button>
+                            <button
+                                type="button"
+                                style="background-color: #fb5012; border-radius: 10px"
+                                id="stopButton"
+                                class="redButton"
+                            >
+                                Stop
+                            </button>
+                            <button
+                                type="button"
+                                style="background-color: #cbbaed; border-radius: 10px"
+                                id="resetButton"
+                                class="blackButton"
+                            >
+                                Reset
+                            </button>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="col-md-4 mb-4">
+                    <label for="myBar">Loading</label>
+                    <div id="myProgress" class="myProgress">
+                        <progress
+                            class="myBar"
+                            id="myBar"
+                            max="100"
+                            value="1"
+                            style="background-color: #e9df00; height: 38px; border: 1px solid #e9df00"
+                        ></progress>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div id="before-sunrise" hidden class="alert alert-warning" role="alert">
+                    ⚠️ You should wait few hours after getting up before making the first cup of coffee.
+                </div>
+                <div id="forenoon" hidden class="alert alert-success" role="alert">
+                    ☕ Just now it's an ideal time to have a coffee.
+                </div>
+                <div id="midday" hidden class="alert alert-info" role="alert">☕ You're fine having a coffee now.</div>
+                <div id="evening" hidden class="alert alert-warning" role="alert">
+                    ⚠️ Beware, you shouldn't drink coffee at least 6 hours before sleep.
+                </div>
+                <div id="after-sunset" hidden class="alert alert-danger" role="alert">
+                    ❌ It's already night, you definitely shouldn't be drinking coffee now.
+                </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
