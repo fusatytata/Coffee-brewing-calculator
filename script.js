@@ -95,9 +95,9 @@ new Promise((resolve, reject) => {
         return results;
     })
     .then(({ civil_twilight_begin, civil_twilight_end }) => {
-        let now = new Date(); //zde se dá uděla fake údaj, a tím si vyzkoušet funkčnost switche
-        let dawn = new Date(civil_twilight_begin); //zde se dá uděla fake rozbřesk, a tím si vyzkoušet funkčnost switche
-        let dusk = new Date(civil_twilight_end); ////zde se dá uděla fake soumrak, a tím si vyzkoušet funkčnost switche
+        let now = new Date(); 
+        let dawn = new Date(civil_twilight_begin);
+        let dusk = new Date(civil_twilight_end); 
 
         let elementToBeShown;
 
@@ -124,4 +124,3 @@ new Promise((resolve, reject) => {
     .catch(error => console.log("Daytime infobox fetch failed", error));
       
 
-// přepsat switch tak, aby to bylo seřazeno chronologicky - ale fungovalo to stejně = všude bude stejné znaménko, ne současný bordel
