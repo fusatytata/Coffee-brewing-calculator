@@ -61,7 +61,7 @@
                         </article>
                     </section>
 
-                    <section class="col">
+                    <section class="col-md-3 mb-4">
                         <article class="yield">
                             <label for="yield">Coffee yield</label>
                             <div class="input-group">
@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="row">
-                    <section class="col">
+                    <section class="col-md-4 mb-4">
                         <article class="timer">
                             <label for="timer">Timer</label>
                             <div class="input-group">
@@ -96,50 +96,30 @@
                         <article class="remain">
                             <label>Countdown</label>
                             <label for="remain"></label>
-                            <input type="text" readonly="" id="remain" class="form-control" />
-
-                            <div class="control-buttons">
-                                <button
-                                    type="button"
-                                    style="background-color: #03fcba; border-radius: 10px"
-                                    id="startButton"
-                                    class="greenButton"
-                                >
-                                    Start
-                                </button>
-                                <button
-                                    type="button"
-                                    style="background-color: #fb5012; border-radius: 10px"
-                                    id="stopButton"
-                                    class="redButton"
-                                >
-                                    Stop
-                                </button>
-                                <button
-                                    type="button"
-                                    style="background-color: #cbbaed; border-radius: 10px"
-                                    id="resetButton"
-                                    class="blackButton"
-                                >
-                                    Reset
-                                </button>
+                            <input type="text" readonly id="remain" class="form-control" />
+    
+                            <div class="control-buttons mt-2">
+                                <button type="button" id="startButton" class="btn btn-success me-2">Start</button>
+                                <button type="button" id="stopButton" class="btn btn-danger me-2">Stop</button>
+                                <button type="button" id="resetButton" class="btn btn-secondary">Reset</button>
                             </div>
                         </article>
                     </section>
-
+                    
                     <section class="col-md-4 mb-4">
                         <label for="myBar">Loading</label>
                         <div id="myProgress" class="myProgress">
                             <progress
-                                class="myBar"
-                                id="myBar"
-                                max="100"
-                                value="1"
-                                style="background-color: #e9df00; height: 38px; border: 1px solid #e9df00"
+                            class="myBar"
+                            id="myBar"
+                            max="100"
+                            value="1"
+                            style="background-color: #e9df00; height: 38px; border: 1px solid #e9df00"
                             ></progress>
                         </div>
                     </section>
                 </div>
+            </div> <!-- TODO: k čemu je tento div??? -->
 
                 <div class="col-md-4 mb-4">
                     <div id="before-sunrise" hidden class="alert alert-warning" role="alert">
