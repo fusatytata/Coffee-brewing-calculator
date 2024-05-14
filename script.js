@@ -7,8 +7,7 @@ let remainInput = document.querySelector("#remain");
 let startButton = document.querySelector("#startButton");
 let stopButton = document.querySelector("#stopButton");
 let resetButton = document.querySelector("#resetButton");
-let progressBar = document.querySelector("#myBar");
-let coffeeOrNot= document.querySelector("#coffeeOrNot");
+let progressBar = document.querySelector("#progress-bar"); 
 
 const calculator = () => {
     waterInput.value = Math.round(beansInput.value * ratioInput.value * 100) / 100; //calc.fc. + two decimal places
@@ -16,19 +15,16 @@ const calculator = () => {
 };
 
 beansInput.addEventListener("input", () => {
-    console.log(beansInput.value);
     calculator();
 });
 
 ratioInput.addEventListener("input", () => {
-    console.log(ratioInput.value);
     calculator();
 });
 
 let timerInterval;
-let remainingMinutes;
-let remainingSeconds;
-let randomFact;
+let remainingMinutes = 0; // Initialize to zero
+let remainingSeconds = 0; // Initialize to zero
 
 let formattedTime = () => {
     let formattedTime =
@@ -40,10 +36,16 @@ let formattedTime = () => {
 
     remainInput.value = formattedTime;
 
-    progressBar.value = 100 - (remainingMinutes + (remainingSeconds / 60) * 100) / timerInput.value;
+    // Update progress bar value
+    progressBar.style.width = (100 - (remainingMinutes + (remainingSeconds / 60)) * 100 / timerInput.value) + "%";
 };
 
 let start = () => {
+    if (!timerInterval) {
+        let minutes = timerInput.value;
+        remainingMinutes = Math.floor(minutes);
+        remainingSeconds = Math.round((minutes - remainingMinutes) * 60);
+    }
     timerInterval = setInterval(function () {
         if (remainingSeconds > 0 || remainingMinutes > 0) {
             remainingSeconds--;
@@ -61,15 +63,17 @@ let start = () => {
 };
 
 let reset = () => {
+    clearInterval(timerInterval);
+    timerInterval = null;
     let minutes = timerInput.value;
     remainingMinutes = Math.floor(minutes);
     remainingSeconds = Math.round((minutes - remainingMinutes) * 60);
     formattedTime();
-    stop();
 };
 
 let stop = () => {
     clearInterval(timerInterval);
+    timerInterval = null;
 };
 
 stopButton.addEventListener("click", stop);
@@ -77,7 +81,6 @@ startButton.addEventListener("click", start);
 resetButton.addEventListener("click", reset);
 
 timerInput.addEventListener("input", reset);
-
 
 const beforeSunriseElement = document.querySelector("#before-sunrise");
 const forenoonElement = document.querySelector("#forenoon");

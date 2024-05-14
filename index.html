@@ -103,42 +103,34 @@
                         </div>
                     </section>
 
-
                     <section class="col-md-4 mb-4">
                         <label for="myBar">Loading</label>
-                        <div id="myProgress" class="myProgress">
-                            <progress
-                                class="myBar"
-                                id="myBar"
-                                max="100"
-                                value="1"
-                                style=""
-                            ></progress>
-                        </div>
+                        <div class="progress myProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            <div id="progress-bar" class="progress-bar myBar" style="width: 1%;" aria-label="Loading Progress"></div>
+                        </div> 
                     </section>
                 </div>
             </main>
         </div>
 
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div id="before-sunrise" hidden class="alert alert-warning" role="alert">
-                            ⚠️ You should wait few hours after getting up before making the first cup of coffee.
-                        </div>
-                        <div id="forenoon" hidden class="alert alert-success" role="alert">
-                            ☕ Just now it's an ideal time to have a coffee.
-                        </div>
-                        <div id="midday" hidden class="alert alert-info" role="alert">
-                            ☕ You're fine having a coffee now.
-                        </div>
-                        <div id="evening" hidden class="alert alert-warning" role="alert">
-                            ⚠️ Beware, you shouldn't drink coffee at least 6 hours before sleep.
-                        </div>
-                        <div id="after-sunset" hidden class="alert alert-danger" role="alert">
-                            ❌ It's already night, you definitely shouldn't be drinking coffee now.
-                        </div>
-                    </div>
+        
+        <div class="row">
+            <div class="col-md-3 mb-4 px-5">
+                <div id="before-sunrise" hidden class="alert alert-warning" role="alert">
+                    ⚠️ You should wait few hours after getting up before making the first cup of coffee.
                 </div>
+                <div id="forenoon" hidden class="alert alert-success" role="alert">
+                    ☕ Just now it's an ideal time to have a coffee.
+                </div>
+                <div id="midday" hidden class="alert alert-info" role="alert">☕ You're fine having a coffee now.</div>
+                <div id="evening" hidden class="alert alert-warning" role="alert">
+                    ⚠️ Beware, you shouldn't drink coffee at least 6 hours before sleep.
+                </div>
+                <div id="after-sunset" hidden class="alert alert-danger" role="alert">
+                    ❌ It's already night, you definitely shouldn't be drinking coffee now.
+                </div>
+            </div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
